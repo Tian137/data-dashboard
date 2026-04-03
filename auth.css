@@ -1,0 +1,7 @@
+body.login-page .login-inline-link:hover {
+    color: #1c2530;
+}
+
+body.login-page .auth-error {
+    margin-top: 2px;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录 - 煤炭经营数据可视化录入平台</title>
+    <link rel="stylesheet" href="./app.css?v=20260401-2">
+    <script src="./api.js?v=20260401-1"></script>
+    <script src="./auth.js?v=20260401-1"></script>
+    <script>
+        window.DataDashboardAuth.redirectIfAuthenticated("./dashboard.html");
+    </script>
+</head>
+<body class="login-page">
+    <main class="login-shell">
+        <section class="login-card" aria-label="登录卡片">
+            <div class="login-visual-pane" aria-hidden="true">
+                <div class="login-characters" id="loginCharacters">
+                    <div class="cc-figure cc-figure--purple" id="charPurple">
+                        <div class="cc-eye-pair cc-eye-pair--white" id="purpleEyes">
+                            <span class="cc-eye cc-eye--white" id="purpleEyeLeft"><span class="cc-pupil" id="purplePupilLeft"></span></span>
+                            <span class="cc-eye cc-eye--white" id="purpleEyeRight"><span class="cc-pupil" id="purplePupilRight"></span></span>
+                        </div>
+                    </div>
+
+                    <div class="cc-figure cc-figure--black" id="charBlack">
+                        <div class="cc-eye-pair cc-eye-pair--white" id="blackEyes">
+                            <span class="cc-eye cc-eye--white" id="blackEyeLeft"><span class="cc-pupil" id="blackPupilLeft"></span></span>
+                            <span class="cc-eye cc-eye--white" id="blackEyeRight"><span class="cc-pupil" id="blackPupilRight"></span></span>
+                        </div>
+                    </div>
+
+                    <div class="cc-figure cc-figure--orange" id="charOrange">
+                        <div class="cc-eye-pair cc-eye-pair--dots" id="orangeEyes">
+                            <span class="cc-dot-eye" id="orangeEyeLeft"></span>
+                            <span class="cc-dot-eye" id="orangeEyeRight"></span>
+                        </div>
+                    </div>
+
+                    <div class="cc-figure cc-figure--yellow" id="charYellow">
+                        <div class="cc-eye-pair cc-eye-pair--dots" id="yellowEyes">
+                            <span class="cc-dot-eye" id="yellowEyeLeft"></span>
+                            <span class="cc-dot-eye" id="yellowEyeRight"></span>
+                        </div>
+                        <span class="cc-mouth" id="yellowMouth"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="login-panel">
+                <div class="login-panel-header">
+                    <h1>系统登录</h1>
+                    <p>仅支持已分配账号登录，账号统一由系统主账号维护。</p>
+                </div>
+
+                <form class="login-form" id="loginForm" novalidate>
+                    <label class="login-field">
+                        <span>用户名</span>
+                        <input id="loginUsername" name="username" type="text" autocomplete="username" placeholder="请输入用户名">
+                    </label>
+
+                    <label class="login-field">
+                        <span>密码</span>
+                        <div class="login-password-wrap">
+                            <input id="loginPassword" name="password" type="password" autocomplete="current-password" placeholder="请输入密码">
+                            <button class="login-password-toggle" id="togglePasswordButton" type="button">显示</button>
+                        </div>
+                    </label>
+
+                    <div class="auth-error" id="loginError" hidden></div>
+
+                    <button class="login-submit" id="loginSubmit" type="submit">登录</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="./login.js?v=20260401-1"></script>
+</body>
+</html>

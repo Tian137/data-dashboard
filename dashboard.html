@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>煤炭经营数据可视化录入平台</title>
+    <link rel="stylesheet" href="./app.css?v=20260401-2">
+    <script src="./api.js?v=20260401-1"></script>
+    <script src="./auth.js?v=20260401-1"></script>
+    <script>
+        window.__dashboardAuth = window.DataDashboardAuth.requireAuth();
+    </script>
+</head>
+<body class="home-page">
+    <div class="screen-shell screen-shell--home">
+        <header class="screen-head screen-head--home">
+            <div class="screen-head-side">
+                <span class="screen-kicker">Big Data View</span>
+                <span class="screen-status">服务端账号体系 / 同源 API / 数据库存储</span>
+            </div>
+            <div class="screen-head-center">
+                <span class="screen-kicker">Coal Data Entry Center</span>
+                <h1>煤炭经营数据可视化录入平台</h1>
+                <p>统一账号登录、角色权限和模板数据维护，保留现有 Excel 周报和月报的网页录入入口，并在工作台集中展示数据态势。</p>
+            </div>
+            <div class="screen-head-side screen-head-side--right">
+                <span class="screen-status screen-status--user" id="homeAuthUser"></span>
+                <div class="screen-head-inline">
+                    <span class="screen-date" id="homeNowDate"></span>
+                    <a class="auth-admin-link" id="adminLink" href="./admin.html" hidden>账号管理</a>
+                    <button class="auth-logout" id="logoutButton" type="button">退出登录</button>
+                </div>
+                <strong class="screen-clock" id="homeNowTime"></strong>
+            </div>
+        </header>
+
+        <main class="screen-grid home-grid">
+            <aside class="screen-panel screen-panel--entries">
+                <div class="panel-head">
+                    <div>
+                        <span class="eyebrow">System Pulse</span>
+                        <h2>总览指标</h2>
+                    </div>
+                </div>
+                <div class="dashboard-stat-grid">
+                    <div class="metric-card">
+                        <span>模板入口</span>
+                        <strong id="templateCount">3</strong>
+                    </div>
+                    <div class="metric-card">
+                        <span>标签页总数</span>
+                        <strong id="sheetCount">4</strong>
+                    </div>
+                    <div class="metric-card">
+                        <span>已写入字段</span>
+                        <strong id="filledFieldCount">0</strong>
+                    </div>
+                    <div class="metric-card">
+                        <span>已更新工作簿</span>
+                        <strong id="updatedWorkbookCount">0 个</strong>
+                    </div>
+                </div>
+                <div class="panel-head panel-head--compact">
+                    <div>
+                        <span class="eyebrow">Entry</span>
+                        <h2>模板入口</h2>
+                    </div>
+                </div>
+                <div class="quick-link-list" id="homeQuickLinks"></div>
+            </aside>
+
+            <section class="screen-panel screen-panel--center data-stage-panel">
+                <div class="section-head">
+                    <div>
+                        <span class="eyebrow">Data Radar</span>
+                        <h2>数据态势</h2>
+                    </div>
+                    <div class="section-head-actions">
+                        <span class="action-status" id="dashboardActionStatus" hidden></span>
+                        <div class="action-row action-row--compact">
+                            <button class="tool-button" id="refreshDashboardButton" type="button">手动刷新</button>
+                            <button class="tool-button" id="exportAllButton" type="button">导出全部快照</button>
+                        </div>
+                    </div>
+                </div>
+                <p id="dashboardUpdateStatus">根据当前浏览器已录入的模板数据动态生成图表，录入页保存后这里会自动刷新。</p>
+                <div class="overview-strip" id="overviewStrip"></div>
+                <div class="chart-grid" id="homeChartGrid"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="./shared.js?v=20260401-1"></script>
+    <script src="./template-platform.js?v=20260401-1"></script>
+    <script src="./template-data.js?v=20260401-1"></script>
+    <script src="./report-models.js?v=20260401-1"></script>
+    <script src="./template-adapters.js?v=20260401-1"></script>
+    <script src="./storage.js?v=20260401-1"></script>
+    <script src="./dashboard.js?v=20260401-1"></script>
+</body>
+</html>

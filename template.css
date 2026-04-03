@@ -1,0 +1,327 @@
+.action-status {
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    padding: 4px 9px;
+    border-radius: 999px;
+    border: 1px solid rgba(20, 36, 55, 0.12);
+    background: rgba(255, 255, 255, 0.86);
+    color: var(--muted);
+    font-size: 0.72rem;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.action-status--success {
+    border-color: rgba(21, 128, 61, 0.22);
+    background: rgba(21, 128, 61, 0.08);
+    color: var(--success);
+}
+
+.action-status--error {
+    border-color: rgba(220, 38, 38, 0.2);
+    background: rgba(220, 38, 38, 0.08);
+    color: var(--danger);
+}
+
+body.template-page .site-shell {
+    padding: 8px;
+}
+
+.template-layout--minimal {
+    gap: 6px;
+}
+
+.template-fixed-head--minimal {
+    gap: 4px;
+}
+
+body.template-page .page-head--minimal {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0;
+    padding: 0 1px;
+}
+
+.template-head-main {
+    display: grid;
+    gap: 2px;
+    min-width: 0;
+}
+
+.template-head-title {
+    color: var(--text);
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1.22;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.template-head-subtitle {
+    color: var(--muted);
+    font-size: 0.74rem;
+    line-height: 1.35;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.template-head-side {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+body.template-page .sheet-toolbar--minimal {
+    gap: 0;
+}
+
+body.template-page .sheet-toolbar-row--minimal {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 6px;
+}
+
+body.template-page .sheet-tabs--compact {
+    grid-column: auto;
+    justify-self: start;
+    gap: 4px;
+}
+
+body.template-page .sheet-tabs--compact .sheet-tab {
+    min-height: 28px;
+    padding-inline: 12px;
+    font-size: 0.8rem;
+}
+
+body.template-page .save-pill {
+    grid-column: auto;
+    justify-self: end;
+    min-height: 28px;
+    padding: 4px 10px;
+    font-size: 0.76rem;
+}
+
+body.template-page .template-sheet-panel {
+    padding: 8px 10px;
+    border-radius: 12px;
+}
+
+body.template-page .sheet-body {
+    gap: 6px;
+}
+
+body.template-page .sheet-content-sheet {
+    gap: 6px;
+}
+
+body.template-page .table-card,
+body.template-page .week-card {
+    padding: 8px;
+    gap: 6px;
+    border-radius: 12px;
+}
+
+body.template-page .table-top--compact {
+    gap: 8px;
+}
+
+body.template-page .table-help {
+    font-size: 0.72rem;
+    line-height: 1.22;
+}
+
+body.template-page .matrix-filter-bar {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    gap: 8px 12px;
+    padding: 8px 10px;
+    border-radius: 12px;
+}
+
+.matrix-filter-main {
+    display: grid;
+    grid-template-columns: 180px 180px;
+    gap: 10px;
+    min-width: 0;
+}
+
+body.template-page .filter-field {
+    gap: 4px;
+}
+
+body.template-page .filter-label {
+    font-size: 0.72rem;
+}
+
+body.template-page .filter-help {
+    grid-column: 1 / -1;
+    font-size: 0.76rem;
+    line-height: 1.28;
+}
+
+.filter-field--actions {
+    min-width: 0;
+}
+
+.filter-field--actions-inline {
+    justify-self: end;
+}
+
+.filter-action-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.filter-action-row--compact {
+    grid-template-columns: repeat(3, auto);
+    gap: 6px;
+}
+
+body.template-page .tool-button {
+    min-height: 28px;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 0.76rem;
+}
+
+body.template-page .tool-button--filter {
+    min-height: 28px;
+    padding: 4px 10px;
+    border-radius: 8px;
+    background: #ffffff;
+}
+
+body.template-page .matrix-filter-bar select {
+    min-height: 28px;
+    padding: 4px 10px;
+    border-radius: 8px;
+    background: #ffffff;
+}
+
+body.template-page.is-structure-readonly .filter-field--actions-inline,
+body.template-page.is-structure-readonly .action-cell .tool-button,
+body.template-page.is-structure-readonly .header-editor-actions,
+body.template-page.is-structure-readonly .tool-button-danger {
+    display: none !important;
+}
+
+body.template-page.is-structure-readonly .header-input,
+body.template-page.is-structure-readonly .row-title-input,
+body.template-page.is-structure-readonly .section-title-input {
+    border-color: transparent;
+    background: transparent;
+    box-shadow: none;
+    pointer-events: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+body.template-page .tool-button-compact {
+    min-height: 22px;
+    padding: 2px 7px;
+    font-size: 0.68rem;
+}
+
+body.template-page .scroll-shell {
+    border-radius: 12px;
+}
+
+body.template-page .scroll-shell::after {
+    bottom: 14px;
+    width: 18px;
+}
+
+body.template-page .scrollbar-dock {
+    height: 14px;
+}
+
+body.template-page .scrollbar-dock::-webkit-scrollbar {
+    height: 10px;
+}
+
+body.template-page .sticky-table th,
+body.template-page .sticky-table td {
+    padding: 8px 10px;
+}
+
+body.template-page .sticky-table thead th {
+    font-size: 0.78rem;
+}
+
+body.template-page .subhead {
+    font-size: 0.78rem;
+}
+
+body.template-page .header-input,
+body.template-page .row-title-input,
+body.template-page .section-title-input {
+    padding: 5px 7px;
+    border-radius: 6px;
+    font-size: 0.78rem;
+}
+
+body.template-page .section-title-input {
+    margin-top: 4px;
+    max-width: 300px;
+}
+
+body.template-page .section-title-input--compact {
+    margin-top: 0;
+    padding: 4px 8px;
+    font-size: 0.84rem;
+}
+
+body.template-page .matrix-input,
+body.template-page .compact-input,
+body.template-page .row-note-input {
+    padding: 6px 8px;
+    font-size: 0.78rem;
+}
+
+body.template-page .computed-cell {
+    min-width: 74px;
+    font-size: 0.78rem;
+}
+
+body.template-page .action-col,
+body.template-page .action-cell {
+    min-width: 74px;
+}
+
+@media (max-width: 860px) {
+    body.template-page .site-shell {
+        padding: 6px;
+    }
+
+    body.template-page .page-head--minimal {
+        grid-template-columns: 1fr;
+        align-items: start;
+    }
+
+    .template-head-side {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    body.template-page .matrix-filter-bar {
+        grid-template-columns: 1fr;
+    }
+
+    .matrix-filter-main {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-field--actions-inline {
+        justify-self: start;
+    }
+
+    .filter-action-row--compact {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>账号管理</title>
+    <link rel="stylesheet" href="./app.css?v=20260401-2">
+    <link rel="stylesheet" href="./admin.css?v=20260401-1">
+    <script src="./api.js?v=20260401-1"></script>
+    <script src="./auth.js?v=20260401-1"></script>
+    <script>
+        window.__adminAuth = window.DataDashboardAuth.requireRole("super_admin", "./dashboard.html");
+    </script>
+</head>
+<body class="admin-page">
+    <div class="admin-shell">
+        <header class="admin-head">
+            <div>
+                <a class="admin-link" href="./dashboard.html">← 返回工作台</a>
+                <h1>账号管理</h1>
+                <p>主账号统一维护账号、角色和模板访问范围。</p>
+            </div>
+            <div class="admin-head-actions">
+                <span class="admin-user" id="adminCurrentUser"></span>
+                <button class="auth-logout" id="adminLogoutButton" type="button">退出登录</button>
+            </div>
+        </header>
+
+        <main class="admin-grid">
+            <section class="admin-card">
+                <div class="admin-card-head">
+                    <h2>创建账号</h2>
+                </div>
+                <form class="admin-form" id="createUserForm">
+                    <label>
+                        <span>用户名</span>
+                        <input id="createUsername" type="text" autocomplete="off">
+                    </label>
+                    <label>
+                        <span>初始密码</span>
+                        <input id="createPassword" type="password">
+                    </label>
+                    <label>
+                        <span>角色</span>
+                        <select id="createRole">
+                            <option value="admin">管理员</option>
+                            <option value="data_entry">数据录入</option>
+                        </select>
+                    </label>
+                    <button class="admin-primary" type="submit">创建账号</button>
+                </form>
+            </section>
+
+            <section class="admin-card admin-card--wide">
+                <div class="admin-card-head">
+                    <h2>账号列表</h2>
+                    <span class="admin-status" id="adminStatus" hidden></span>
+                </div>
+                <div class="admin-table-wrap">
+                    <table class="admin-table" id="usersTable">
+                        <thead>
+                            <tr>
+                                <th>用户名</th>
+                                <th>角色</th>
+                                <th>状态</th>
+                                <th>最近登录</th>
+                                <th>重置密码</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="admin-card admin-card--wide">
+                <div class="admin-card-head">
+                    <h2>角色模板权限</h2>
+                </div>
+                <div class="admin-permissions" id="permissionsMount"></div>
+                <div class="admin-inline-actions">
+                    <button class="admin-primary" id="savePermissionsButton" type="button">保存权限</button>
+                </div>
+            </section>
+
+            <section class="admin-card admin-card--wide">
+                <div class="admin-card-head">
+                    <h2>全量备份</h2>
+                </div>
+                <div class="admin-inline-actions">
+                    <button class="admin-primary" id="exportBackupButton" type="button">导出全部备份</button>
+                    <input id="importBackupInput" type="file" accept="application/json">
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="./shared.js?v=20260401-1"></script>
+    <script src="./admin.js?v=20260401-2"></script>
+</body>
+</html>
