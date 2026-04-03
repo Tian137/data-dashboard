@@ -33,6 +33,30 @@ Then open:
 
 `http://127.0.0.1:4173/index.html`
 
+## Run PostgreSQL + Nginx with Docker
+
+From the project directory:
+
+```bash
+docker compose up -d
+```
+
+Default services:
+
+- PostgreSQL: `127.0.0.1:5432`
+- Nginx reverse proxy: `http://127.0.0.1` (proxy to app `4173`)
+
+If needed, copy `.env.example` to `.env` and adjust credentials/ports before starting.
+
+Server DB environment variables:
+
+- `DATA_DASHBOARD_PG_HOST`
+- `DATA_DASHBOARD_PG_PORT`
+- `DATA_DASHBOARD_PG_DATABASE`
+- `DATA_DASHBOARD_PG_USER`
+- `DATA_DASHBOARD_PG_PASSWORD`
+- `DATA_DASHBOARD_PG_SSL`
+
 ## Useful checks
 
 You can re-run syntax checks with:
