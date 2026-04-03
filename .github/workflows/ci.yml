@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  syntax-check:
+    name: JavaScript Syntax Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Check JS syntax
+        run: |
+          set -euo pipefail
+          files="$(git ls-files '*.js')"
+          if [ -z "$files" ]; then
+            echo "No JavaScript files found."
+            exit 0
+          fi
+
+          while IFS= read -r file; do
+            echo "Checking $file"
+            node --check "$file"
+          done <<< "$files"
